@@ -266,7 +266,7 @@ textarea:focus{
 }
 .arrow{
     position: fixed;
-    top: 48vh;
+    top: 44vh;
     width: 40px;
     z-index: 9999;
     padding: 5px;
