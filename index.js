@@ -50,10 +50,10 @@ $(function () {
     $('.icon').hover(
         function () {
             $(this).find('img').css("display", "none");
-            $(this).find('a').css({ "display": "inline-block" });
+            $(this).find('p').css({ "display": "inline-block", "top":"0px","position":"fixed" });
         }, function () {
             $(this).find('img').css("display", "inline-block");
-            $(this).find('a').css("display", "none");
+            $(this).find('p').css("display", "none");
         }
     );
 });

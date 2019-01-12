@@ -13,21 +13,21 @@
 <body>
 	<div class="container">
 		<div class="navLinks">
-			<div class="icon">
-				<img id="homeBut" onclick="flip('home')" src="icons/whiteHouseIcon.png" />
-				<a onclick="flip('home')">Home</a>
+			<div class="icon" onclick="flip('home')">
+				<img id="homeBut"  src="icons/whiteHouseIcon.png" />
+				<p>Home</p>
 			</div>
-			<div class="icon">
-				<img id="aboutBut" onclick="flip('about')" src="icons/whiteProfileIcon.png" />
-				<a onclick="flip('about')">About</a>
+			<div class="icon" onclick="flip('about')">
+				<img id="aboutBut"  src="icons/whiteProfileIcon.png" />
+				<p>About</p>
 			</div>
-			<div class="icon">
-				<img id="projectsBut" onclick="flip('projects')" src="icons/whiteGearIcon.png" />
-				<a onclick="flip('projects')">Projects</a>
+			<div class="icon" onclick="flip('projects')">
+				<img id="projectsBut"  src="icons/whiteGearIcon.png" />
+				<p>Projects</p>
 			</div>
-			<div class="icon">
-				<img id="contactBut" onclick="flip('contact')" src="icons/whiteMailIcon.png" />
-				<a onclick="flip('contact')">Contact</a>
+			<div class="icon" onclick="flip('contact')" >
+				<img id="contactBut" src="icons/whiteMailIcon.png" />
+				<p>Contact</p>
 			</div>
 		</div>
 		<div class="page">
@@ -66,20 +66,20 @@
 						</div>
 					</div>
 				</div>
-				<p>I'm a self taught programmer with experience in both front and back-end development. I have worked on
+				<p class="aboutIntro"> I'm a self taught programmer with experience in both front and back-end development. I have
+					worked on
 					projects
 					ranging from intelligent naming & classification software to voice recognition to full-stack mobile
 					applications
 					with back end server and databases.
 				</p>
-				<p>
-					My greatest asset is my believe that there is always a way to make it work. I am always looking to learn
-					something
+				<p class="aboutIntro">
+					My greatest asset is my believe that there is always a way to make it work. I am always looking to learn something
 					new to improve my skills or make my project work.
 				</p>
 			</div>
 			<div class="aboutCont">
-				<h2>The Stack I use:</h2>
+				<h2 style="padding-left: 0">The Stack I use:</h2>
 				<h3>Front end:</h3>
 				<p>JavaScript, Angular/TypeSctipt, PHP, Meteor.js, HTML/CSS, Bootstrap, SCSS</p>
 				<h3>Back end:</h3>
@@ -90,9 +90,8 @@
 				<p>Heroku, Github</p>
 				<h3>Other:</h3>
 				<p>RestAPIs, Apache Cordova, Git, Npm, Linux</p>
+				<br><br><br><br>
 			</div>
-			<br>
-			<br>
 		</div>
 
 		<div class="pageCont" id="projects">
@@ -152,9 +151,9 @@
 			<div class="projectCont grey">
 				<h2>Electronic Cost Consulting (Intelligent Document Processing)</h2>
 				<p>Ecc Has been one of my main projects over the last 2 years.</p>
-				<p>The Idea came from seeing a how law firms work out their bills.
-					It takes a trained somewhere between an hour to a couple of days to summarise the contents of a legal file to
-					which can have upwards of a thousand pages.
+				<p>The idea came from seeing how law firms calculate their bills.
+					It takes somewhere between an hour to a couple of days to summarise the contents of a legal file, which can have
+					upwards of a thousand pages.
 					The idea was to automate the whole process.</p>
 				<p>The project steps after receiving a scanned file are:</p>
 				<p>- OCR all the pages</p>
@@ -162,7 +161,7 @@
 				<p>- Extracting data from documents depending on their type. Including, names, dates, word counts etc.</p>
 				<p>- Recognising if documents contains certain rubber stamps to cut these out and rotate them for people to
 					check.</p>
-				<p>- After a quick summary check of unrecognisable pages by a person to convert all data into a bill ready to
+				<p>- After a quick summary check of unrecognisable pages by a person, convert all data into a bill ready to
 					present to a client.</p>
 				<p>Main Tech Used:</p>
 				<p>Java, Pdfbox, Apache Poi, Google Drive API, Open CV</p>
@@ -170,12 +169,12 @@
 			<div class="projectCont black">
 				<h2>Mia (Virtual Assistant) (Personal Project)</h2>
 				<p>The idea came from the novelty of electronic assistants like Alexa/Bixby/Siri/Google Assistant etc.
-					I always thought it was a great project but the one big feature that was always a bit of a challenge is the adding
+					I always thought it was a great project but the one feature that was a bit of a challenge is the adding
 					of new skills and tasks. The other is that most of them tend to only work with an internet connection and that
 					most data is processed elsewhere.</p>
-				<p>What I ended up building was a voice assistant working on a computer and can function without an internet
+				<p>What I ended up building was a voice assistant working on a computer that can function without an internet
 					connection.</p>
-				<p>It has most of the features of the standard voice assistants but have added features such as:</p>
+				<p>It has most of the features of a standard voice assistants but have added features such as:</p>
 				<p>-Quick adding of new skills.</p>
 				<p>-Wake word disabling for working in quiet areas and changing of wake words.</p>
 				<p>-Different language by asking.</p>
@@ -183,9 +182,7 @@
 				<p>-Text communication via Facebook messenger.</p>
 				<p>Main Tech Used:</p>
 				<p>Java, Shell script, Sphinx4j, Mary text to speech</p>
-			</div>
-			<div class="projectCont black">
-				<br><br><br><br>
+				<br><br><br>
 			</div>
 		</div>
 		<div class="pageCont" id="contact">
