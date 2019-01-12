@@ -1,1 +1,207 @@
-Hello World
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Henry K</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="jquery/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="index.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="navLinks">
+			<div class="icon">
+				<img id="homeBut" onclick="flip('home')" src="icons/whiteHouseIcon.png" />
+				<a onclick="flip('home')">Home</a>
+			</div>
+			<div class="icon">
+				<img id="aboutBut" onclick="flip('about')" src="icons/whiteProfileIcon.png" />
+				<a onclick="flip('about')">About</a>
+			</div>
+			<div class="icon">
+				<img id="projectsBut" onclick="flip('projects')" src="icons/whiteGearIcon.png" />
+				<a onclick="flip('projects')">Projects</a>
+			</div>
+			<div class="icon">
+				<img id="contactBut" onclick="flip('contact')" src="icons/whiteMailIcon.png" />
+				<a onclick="flip('contact')">Contact</a>
+			</div>
+		</div>
+		<div class="page">
+			<img class="arrow" onclick="backward()" id="arrowLeft" src="icons/whiteLArrowIcon.png" />
+			<img class="arrow" onclick="forward()" id="arrowRight" src="icons/whiteRArrowIcon.png" />
+			<div class="pageCont" id="home">
+				<div class="textArea">
+					<p id="name">Hi, I'm Henry</p>
+					<p>I'm a web developer.<br>I build full-stack responsive websites and web/hybrid apps.</p>
+					<p></p>
+					<p id="cta" onclick="flip('contact')">Need a website/webapp<br>or looking to hire</p>
+					<div id="social">
+						<a href="https://www.linkedin.com/in/henry-
+							koekemoer-693b22168" target="_blank"><img src="./icons/linkIcon.png" /></a>
+						<a href="https://github.com/Henryk91" target="_blank"><img src="./icons/githubIcon.png" /></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pageCont" id="about">
+			<div class="aboutCont">
+				<div id="aboutTop">
+					<h2>About Me</h2>
+					<img id="profilePic" src="images/asd3d.png" /><br>
+					<div class="inline">
+						<div>
+							<a href="https://www.linkedin.com/in/henry-koekemoer-693b22168" target="_blank">
+								<img src="./icons/linkIcon.png" style="width: 45px" />
+							</a>
+							<p>LinkedIn</p>
+						</div>
+						<div id="cvDL">
+							<a href="Henry Koekemoer CV.pdf" target="_blank">
+								<img src="./icons/downloadCv.png" />
+							</a>
+							<p>My CV</p>
+						</div>
+					</div>
+				</div>
+				<p>I'm a self taught programmer with experience in both front and back-end development. I have worked on
+					projects
+					ranging from intelligent naming & classification software to voice recognition to full-stack mobile
+					applications
+					with back end server and databases.
+				</p>
+				<p>
+					My greatest asset is my believe that there is always a way to make it work. I am always looking to learn
+					something
+					new to improve my skills or make my project work.
+				</p>
+			</div>
+			<div class="aboutCont">
+				<h2>The Stack I use:</h2>
+				<h3>Front end:</h3>
+				<p>JavaScript, Angular/TypeSctipt, PHP, Meteor.js, HTML/CSS, Bootstrap, SCSS</p>
+				<h3>Back end:</h3>
+				<p>Node.js, Express.js, Socket.io, Java, Apache2, Lamp, Tomcat</p>
+				<h3>Database:</h3>
+				<p>Postgres, Mongo, MySql</p>
+				<h3>Deployment:</h3>
+				<p>Heroku, Github</p>
+				<h3>Other:</h3>
+				<p>RestAPIs, Apache Cordova, Git, Npm, Linux</p>
+			</div>
+			<br>
+			<br>
+		</div>
+
+		<div class="pageCont" id="projects">
+			<div class="projectCont grey">
+				<a href="https://github.com/Henryk91" target="_blank">
+					<div id="projGit">
+						<img src="./icons/githubIcon.png" style="width: 60px" />
+						<p>Click the icon to view code on Github</p>
+					</div>
+				</a>
+			</div>
+			<div class="projectCont black">
+				<h2>Rhino Assets Mobile App (Front and back end fuel logging app)</h2>
+				<p>The client requested a cross platform mobile app for fuel supply logging and management.</p>
+				<p>Features Include:</p>
+				<ul>
+					<li>User Login</li>
+					<li>Asset add and remove</li>
+					<li>Usage Updating</li>
+					<li>Reporting On Usage</li>
+				</ul>
+				<p>Main Tech Used:<br>
+					Html, Css, JavaScript, Node.js, Tomcat Server, PostgreSQL, and Heroku for hosting.</p>
+				<div id="rhinoPics">
+					<img src="images/rhinoFP.png" />
+					<img src="images/rhinoNU.png" />
+					<img src="images/rhinoNTC.png" />
+					<img src="images/rhinoNTO.png" />
+				</div>
+			</div>
+			<div class="projectCont grey">
+				<h2>Chat App</h2>
+				<p>This is a real time functioning chat app that can be used stand alone or as a base to build a private
+					messaging app.</p>
+				<p>Main Tech Used:<br>
+					Html, SCSS, Angular 6, TypeSctipt, JavaScript, Node.js, Socket.io</p>
+				<div id="rhinoPics">
+					<img src="images/chatAppMC.png" />
+					<img src="images/chatAppM.png" />
+					<img src="images/chatAppC.png" />
+					<img src="images/chatAppCTS.png" />
+				</div>
+			</div>
+			<div class="projectCont black">
+				<h2>QuickToDo's</h2>
+				<p>A simple to do list for everyone on the local network</p>
+				<p>Features Include:</p>
+				<ul>
+					<li>User Login</li>
+					<li>Toggle between private and public</li>
+					<li>Toggle between done and not</li>
+				</ul>
+				<p>Main Tech Used:<br>
+					Html, SCSS, JavaScript, Node.js, Meteor.js, MongoDB</p>
+				<img id="quickTD" src="./images/quickToDos.png" />
+			</div>
+			<div class="projectCont grey">
+				<h2>Electronic Cost Consulting (Intelligent Document Processing)</h2>
+				<p>Ecc Has been one of my main projects over the last 2 years.</p>
+				<p>The Idea came from seeing a how law firms work out their bills.
+					It takes a trained somewhere between an hour to a couple of days to summarise the contents of a legal file to
+					which can have upwards of a thousand pages.
+					The idea was to automate the whole process.</p>
+				<p>The project steps after receiving a scanned file are:</p>
+				<p>- OCR all the pages</p>
+				<p>- Recognition start and end pages of all documents in files</p>
+				<p>- Extracting data from documents depending on their type. Including, names, dates, word counts etc.</p>
+				<p>- Recognising if documents contains certain rubber stamps to cut these out and rotate them for people to
+					check.</p>
+				<p>- After a quick summary check of unrecognisable pages by a person to convert all data into a bill ready to
+					present to a client.</p>
+				<p>Main Tech Used:</p>
+				<p>Java, Pdfbox, Apache Poi, Google Drive API, Open CV</p>
+			</div>
+			<div class="projectCont black">
+				<h2>Mia (Virtual Assistant) (Personal Project)</h2>
+				<p>The idea came from the novelty of electronic assistants like Alexa/Bixby/Siri/Google Assistant etc.
+					I always thought it was a great project but the one big feature that was always a bit of a challenge is the adding
+					of new skills and tasks. The other is that most of them tend to only work with an internet connection and that
+					most data is processed elsewhere.</p>
+				<p>What I ended up building was a voice assistant working on a computer and can function without an internet
+					connection.</p>
+				<p>It has most of the features of the standard voice assistants but have added features such as:</p>
+				<p>-Quick adding of new skills.</p>
+				<p>-Wake word disabling for working in quiet areas and changing of wake words.</p>
+				<p>-Different language by asking.</p>
+				<p>-An ability to show the web cam a picture and asking for translation or meaning.</p>
+				<p>-Text communication via Facebook messenger.</p>
+				<p>Main Tech Used:</p>
+				<p>Java, Shell script, Sphinx4j, Mary text to speech</p>
+			</div>
+			<div class="projectCont black">
+				<br><br><br><br>
+			</div>
+		</div>
+		<div class="pageCont" id="contact">
+			<div class="contactCont">
+				<h1>Contact</h1>
+				<p>If you have any questions, queries or idea for a project please fill out below or send an email to
+					heinrichk91@gmail.com</p>
+				<form>
+					<input id="inputName" type="text" placeholder="Name..."><br>
+					<input id="inputEmail" type="email" placeholder="Email..."><br>
+					<textarea id="inputMsg" placeholder="Message..."></textarea><br>
+					<p id="inputBut" onclick="submit()">Send</p>
+				</form>
+			</div>
+			<br>
+		</div>
+	</div>
+</body>
