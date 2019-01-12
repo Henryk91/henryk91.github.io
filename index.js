@@ -50,7 +50,7 @@ $(function () {
     $('.icon').hover(
         function () {
             $(this).find('img').css("display", "none");
-            $(this).find('p').css({ "display": "inline-block", "top":"0px","position":"fixed" });
+            $(this).find('p').css({ "display": "inline-block", "top":"-6px","position":"fixed" });
         }, function () {
             $(this).find('img').css("display", "inline-block");
             $(this).find('p').css("display", "none");
