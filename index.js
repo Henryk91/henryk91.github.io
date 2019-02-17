@@ -36,11 +36,11 @@ function flip(Id) {
     if (Id.indexOf('home') == 0) {
         posSlideIn = (posSlideIn * 1.5);
     }
-
-    $oldBox.animate({ "margin-left": "20%", "margin-right": "" }, 300);
+    // $oldBox.animate({ "margin-left": "20%", "margin-right": "" }, 300);
+    // $oldBox.animate({ "margin-left": "20%"}, 300);
     $oldBox.animate({ "margin-left": posSlideOut + "px", "margin-right": -posSlideIn + "px" }, 700, function () {
         $oldBox.css({ "margin-left": "", "margin-right": "", "display": "none" });
-        $newBox.css({ "margin-left": (posSlideIn) + "px", "margin-right": -posSlideIn + "px", "display": "block" });
+        $newBox.css({ "margin-left": (posSlideIn) + "px", "margin-right": -posSlideIn + "px", "display": "flex", "align-items": "center", "flex-direction": "column" });
         $newBox.animate({ "margin-left": "", "margin-right": "" }, 600);
     });
     currLoc = Id;
@@ -50,9 +50,9 @@ $(function () {
     $('.icon').hover(
         function () {
             $(this).find('img').css("display", "none");
-            $(this).find('p').css({ "display": "inline-block", "top":"-6px","position":"fixed" });
+            $(this).find('p').css({ "display": "block", "position": "fixed" });
         }, function () {
-            $(this).find('img').css("display", "inline-block");
+            $(this).find('img').css({ "display": "block" });
             $(this).find('p').css("display", "none");
         }
     );
@@ -95,6 +95,16 @@ document.onkeydown = function (event) {
             break;
     }
 };
+$(function () {
+    $('body').on('swipeleft', function () {
+        forward();
+    });
+});
+$(function () {
+    $('body').on('swiperight', function () {
+        backward();
+    });
+});
 
 function submit() {
     var name = $('#inputName').val();
