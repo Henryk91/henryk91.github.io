@@ -1,5 +1,5 @@
 var currLoc = 'home';
-function HideContent(Id) {
+ HideContent = (Id) => {
 
     var page = ['home', 'about', 'projects', 'contact'];
     if (page.length > 0) {
@@ -11,7 +11,7 @@ function HideContent(Id) {
         }
     }
 }
-function flip(Id) {
+ flip = (Id) => {
     var $oldBox = $("#" + currLoc);
     var $newBox = $("#" + Id);
     var $oldButton = $("#" + currLoc + "But");
@@ -38,7 +38,7 @@ function flip(Id) {
     }
     // $oldBox.animate({ "margin-left": "20%", "margin-right": "" }, 300);
     // $oldBox.animate({ "margin-left": "20%"}, 300);
-    $oldBox.animate({ "margin-left": posSlideOut + "px", "margin-right": -posSlideIn + "px" }, 700, function () {
+    $oldBox.animate({ "margin-left": posSlideOut + "px", "margin-right": -posSlideIn + "px" }, 700, () => {
         $oldBox.css({ "margin-left": "", "margin-right": "", "display": "none" });
         $newBox.css({ "margin-left": (posSlideIn) + "px", "margin-right": -posSlideIn + "px", "display": "flex", "align-items": "center", "flex-direction": "column" });
         $newBox.animate({ "margin-left": "", "margin-right": "" }, 600);
@@ -46,19 +46,19 @@ function flip(Id) {
     currLoc = Id;
 }
 
-$(function () {
+$(() => {
     $('.icon').hover(
-        function () {
+        () => {
             $(this).find('img').css("display", "none");
             $(this).find('p').css({ "display": "block", "position": "fixed" });
-        }, function () {
+        }, () => {
             $(this).find('img').css({ "display": "block" });
             $(this).find('p').css("display", "none");
         }
     );
 });
 
-function forward() {
+ forward = () => {
     var next = 'about';
     if (currLoc.indexOf('about') == 0) {
         next = 'projects';
@@ -72,7 +72,7 @@ function forward() {
     flip(next);
 }
 
-function backward() {
+ backward = () => {
     var next = 'contact';
     if (currLoc.indexOf('about') == 0) {
         next = 'home';
@@ -85,7 +85,7 @@ function backward() {
     }
     flip(next);
 }
-document.onkeydown = function (event) {
+document.onkeydown =  (event) => {
     switch (event.keyCode) {
         case 37:
             backward();
@@ -95,18 +95,18 @@ document.onkeydown = function (event) {
             break;
     }
 };
-$(function () {
-    $('body').on('swipeleft', function () {
+$(() => {
+    $('body').on('swipeleft', () => {
         forward();
     });
 });
-$(function () {
-    $('body').on('swiperight', function () {
+$(() => {
+    $('body').on('swiperight', () => {
         backward();
     });
 });
 
-function submit() {
+ submit = () => {
     var name = $('#inputName').val();
     var email = $('#inputEmail').val();
     var msg = $('#inputMsg').val();
@@ -146,20 +146,15 @@ function submit() {
         $('#inputMsg').css("border-bottom", "white 1px solid");
     }
     if (!block) {
-        var domainUrl = 'https://fathomless-anchorage-41188.herokuapp.com/post';
-        var obj = { name, email, msg };
-        Name = 'PortMSG';
-        $(function () {
-            $.ajax({
-                url: domainUrl,
-                dataType: 'jsonp',
-                data: { obj },
-                success: function (data) {
-                    var str = JSON.stringify(data);
-                    alert("Message Sent. I will be in touch asap.");
-                    flip("home");
-                },
-                jsonpCallback: Name
+        const domainUrl = 'https://henryk91-anon-mes-board.glitch.me/api/threads/message';
+        const message = name + '\n' + email + '\n' + msg
+        const obj = { board: 't4', text: message, delete_password: '1234' };
+        $(() => {
+            $.post(domainUrl,
+            obj,
+            () => {
+                alert("Message Sent. I will be in touch asap.");
+                flip("home");
             });
         });
     }
