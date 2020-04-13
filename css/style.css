@@ -7,6 +7,9 @@ body{
     margin:0px;
     padding:0px;
 }
+body > div:focus{
+    outline: none !important;
+}
 header{ 
     display: fixed;
     background: rgb(37, 36, 36);
@@ -39,6 +42,10 @@ nav img{
 .icon img{
     padding:5px; 
 }
+
+.icon:hover{
+    border-bottom:2px solid rgba(94, 164, 255, 0.4);
+}
 .navText{
     margin-top: -35px;
     font-size: 20px;
@@ -54,6 +61,7 @@ nav img{
     width: 100vw;
     color:white;
     background-image: url("darkLaptop.jpeg");
+    background-size: 100vw 100vh;
     background-position: left 50% bottom 20%;
     background-repeat: no-repeat;
 }
@@ -279,7 +287,10 @@ textarea:focus{
 }
 .arrow:hover{
     animation-name:boxSlide;
-    animation-duration: 3s;      
+    animation-duration: 3s;  
+    background-color: rgb(94, 164, 255, 0.6); 
+    box-shadow: 0 0 60px 1px rgb(94, 164, 255, 0.6);
+    border-radius:50%;
 }
 
 @keyframes boxSlide{
@@ -287,15 +298,20 @@ textarea:focus{
     0% { border-radius:50%;}
 
     50%{
-        background-color: rgb(94, 164, 255, 0.6); 
-        box-shadow: 0 0 60px 1px rgb(94, 164, 255, 0.6);
+        
         transform: rotate(720deg); 
         border-radius:50%;
     }
-    100%{background-color: none; border-radius:50%;}
+    100%{
+        border-radius:50%;
+    }
+    
 }
 
 .contactCont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
     height: 85vh;
     background: rgb(37, 36, 36);
@@ -412,3 +428,31 @@ textarea:focus{
         display: none;
     }
 }
+.loader {
+    position: absolute;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: spin 1s linear infinite; /* Safari */
+    animation: spin 1s linear infinite;
+
+    
+    top: 50vh;
+    left: calc(50vw - 49px);
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

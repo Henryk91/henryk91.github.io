@@ -106,6 +106,10 @@ $(() => {
     });
 });
 
+loaderToggle =(val) => { 
+ $("#loader").toggleClass('loader');
+}
+
  submit = () => {
     var name = $('#inputName').val();
     var email = $('#inputEmail').val();
@@ -146,14 +150,19 @@ $(() => {
         $('#inputMsg').css("border-bottom", "white 1px solid");
     }
     if (!block) {
-        const domainUrl = 'https://henryk91-anon-mes-board.glitch.me/api/threads/message';
+        loaderToggle('show');
+        const domainUrl = 'https://henryk91-note.herokuapp.com/api/email';
         const message = name + '\n' + email + '\n' + msg
-        const obj = { board: 't4', text: message, delete_password: '1234' };
+        const obj = { board: 't4', email, text: message, delete_password: '1234' };
         $(() => {
             $.post(domainUrl,
             obj,
             () => {
+                loaderToggle('hide');
                 alert("Message Sent. I will be in touch asap.");
+                $('#inputName').val("");
+                $('#inputEmail').val("");
+                $('#inputMsg').val("");
                 flip("home");
             });
         });
