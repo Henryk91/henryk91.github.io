@@ -168,3 +168,12 @@ loaderToggle =(val) => {
         });
     }
 }
+
+logUse = () => {
+    const domainUrl = 'https://henryk91-note.herokuapp.com/api/log';
+    $(() => {
+        $.get(domainUrl,
+        () => {console.log('Welcome to my site.')});
+    });
+}
+logUse();
