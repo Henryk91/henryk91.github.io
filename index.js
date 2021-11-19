@@ -33,18 +33,15 @@ var currLoc = 'home';
 
     var posSlideOut = (back ? -outerWidth : outerWidth);
     var posSlideIn = (back ? -outerWidth : outerWidth);
-    if (Id.indexOf('home') == 0) {
-        posSlideIn = (posSlideIn * 1.5);
-    }
-    
-    $oldBox.animate({ "margin-left": -posSlideOut + "px", "margin-right": posSlideIn + "px" }, 700, () => {
-        
-        $oldBox.css({ "margin-left": "", "margin-right": ""});
-        $newBox.css({ "margin-right": (-posSlideIn) + "px", "margin-left": posSlideIn + "px", "visibility": "unset", "display": "flex", "align-items": "center", "flex-direction": "column" });
-        $newBox.animate({ "margin-left": "", "margin-right": "" }, 600);
 
+    document.getElementById(Id).classList.remove('hidden-page');
+    document.getElementById(Id).classList.add('not-hidden-page');
+    $newBox.css({ "margin-right": (-posSlideIn) + "px", "margin-left": posSlideIn + "px", "visibility": "unset", "display": "flex", "align-items": "center", "flex-direction": "column" });
+    
+    $oldBox.animate({ "margin-left": -posSlideOut + "px", "margin-right": posSlideIn + "px" }, 600);
+    $newBox.animate({ "margin-left": "", "margin-right": "" },650 , () =>  {
+        document.getElementById(currLoc).classList.remove('not-hidden-page');
         document.getElementById(currLoc).classList.add('hidden-page');
-        document.getElementById(Id).classList.remove('hidden-page');
         currLoc = Id;
     });
     

@@ -100,6 +100,7 @@ nav img{
     visibility: hidden;
     height: 92vh;
     z-index: 400; 
+    width: 100vw;
 }
 #profilePic{
     width: 150px;
@@ -224,6 +225,7 @@ textarea:focus{
     overflow-y: scroll;
     height: 92vh;
     z-index: 400;
+    width: 100vw;
 }
 #projectHeader{
     text-align: center;
@@ -270,6 +272,7 @@ textarea:focus{
     overflow: hidden;
     margin-top: 20px; 
     height: 84vh;
+    width: 100vw;
 }
 
 .pageCont{
@@ -472,4 +475,12 @@ textarea:focus{
     visibility: hidden !important; 
     overflow: hidden !important;
     min-height: unset !important;
+}
+.not-hidden-page{
+    position: absolute;
+    bottom: 0px;
+}
+
+#mail-link{
+    color: white;
 }
