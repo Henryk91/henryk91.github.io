@@ -12,7 +12,7 @@ var currLoc = 'home';
         }
     }
 }
- flip = (Id, back = false) => {
+ flip = (Id, back = true) => {
     var $oldBox = $("#" + currLoc);
     var $newBox = $("#" + Id);
     var $oldButton = $("#" + currLoc + "But");
@@ -70,7 +70,7 @@ $(() => {
     if (currLoc.indexOf('contact') == 0) {
         next = 'home';
     }
-    flip(next, true);
+    flip(next, false);
 }
 
  backward = () => {
@@ -98,12 +98,12 @@ document.onkeydown =  (event) => {
 };
 $(() => {
     $('body').on('swipeleft', () => {
-        backward();
+        forward();
     });
 });
 $(() => {
     $('body').on('swiperight', () => {
-        forward();
+        backward();
     });
 });
 
