@@ -12,7 +12,7 @@ var currLoc = 'home';
         }
     }
 }
- flip = (Id) => {
+ flip = (Id, back = false) => {
     var $oldBox = $("#" + currLoc);
     var $newBox = $("#" + Id);
     var $oldButton = $("#" + currLoc + "But");
@@ -31,25 +31,18 @@ var currLoc = 'home';
         "padding": ""
     });
 
-    var posSlideOut = (outerWidth > 0 ? -outerWidth : outerWidth);
-    var posSlideIn = (outerWidth > 0 ? -outerWidth : outerWidth);
-
+    var posSlideOut = (back ? -outerWidth : outerWidth);
+    var posSlideIn = (back ? -outerWidth : outerWidth);
     if (Id.indexOf('home') == 0) {
         posSlideIn = (posSlideIn * 1.5);
     }
-    // $oldBox.animate({ "margin-left": "20%", "margin-right": "" }, 300);
-    // $oldBox.animate({ "margin-left": "20%"}, 300);
     
-    console.log('document.getElementById(currLoc)',document.getElementById(currLoc));
-    
-    console.log('document.getElementById(Id)',document.getElementById(Id));
-    
-    $oldBox.animate({ "margin-left": posSlideOut + "px", "margin-right": -posSlideIn + "px" }, 700, () => {
+    $oldBox.animate({ "margin-left": -posSlideOut + "px", "margin-right": posSlideIn + "px" }, 700, () => {
         
         $oldBox.css({ "margin-left": "", "margin-right": ""});
-        $newBox.css({ "margin-left": (posSlideIn) + "px", "margin-right": -posSlideIn + "px", "visibility": "unset", "display": "flex", "align-items": "center", "flex-direction": "column" });
+        $newBox.css({ "margin-right": (-posSlideIn) + "px", "margin-left": posSlideIn + "px", "visibility": "unset", "display": "flex", "align-items": "center", "flex-direction": "column" });
         $newBox.animate({ "margin-left": "", "margin-right": "" }, 600);
-        console.log('currLoc',currLoc);
+
         document.getElementById(currLoc).classList.add('hidden-page');
         document.getElementById(Id).classList.remove('hidden-page');
         currLoc = Id;
@@ -80,7 +73,7 @@ $(() => {
     if (currLoc.indexOf('contact') == 0) {
         next = 'home';
     }
-    flip(next);
+    flip(next, true);
 }
 
  backward = () => {
@@ -108,12 +101,12 @@ document.onkeydown =  (event) => {
 };
 $(() => {
     $('body').on('swipeleft', () => {
-        forward();
+        backward();
     });
 });
 $(() => {
     $('body').on('swiperight', () => {
-        backward();
+        forward();
     });
 });
 
