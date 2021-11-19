@@ -6,6 +6,7 @@ body{
     flex-direction: column;
     margin:0px;
     padding:0px;
+    overflow: hidden;
 }
 body > div:focus{
     outline: none !important;
@@ -96,7 +97,7 @@ nav img{
 }
 #about{
     overflow-y: scroll;
-    display: none;
+    visibility: hidden;
     height: 92vh;
     z-index: 400; 
 }
@@ -214,12 +215,15 @@ textarea:focus{
 }
 
 #projects{
-    display: none;
+    visibility: hidden;
     align-content: center;
     text-align: left;
     align-items: center;
     flex-direction: column;
     font-size:16px;
+    overflow-y: scroll;
+    height: 92vh;
+    z-index: 400;
 }
 #projectHeader{
     text-align: center;
@@ -262,7 +266,7 @@ textarea:focus{
     margin-left:15%;
 }
 #contact{
-    display: none;
+    visibility: hidden;
     overflow: hidden;
     margin-top: 20px; 
     height: 84vh;
@@ -462,3 +466,10 @@ textarea:focus{
         width: 40px;
     }
   }
+
+.hidden-page{
+    height: 0px !important;
+    visibility: hidden !important; 
+    overflow: hidden !important;
+    min-height: unset !important;
+}

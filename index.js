@@ -6,7 +6,8 @@ var currLoc = 'home';
         var i;
         for (i = 0; i < page.length; i++) {
             if (page[i] !== Id) {
-                document.getElementById(page[i]).style.display = "none";
+                // document.getElementById(page[i]).style.visibility = "hidden";
+                // document.getElementById(page[i]).style.display = "none";
             }
         }
     }
@@ -38,24 +39,34 @@ var currLoc = 'home';
     }
     // $oldBox.animate({ "margin-left": "20%", "margin-right": "" }, 300);
     // $oldBox.animate({ "margin-left": "20%"}, 300);
+    
+    console.log('document.getElementById(currLoc)',document.getElementById(currLoc));
+    
+    console.log('document.getElementById(Id)',document.getElementById(Id));
+    
     $oldBox.animate({ "margin-left": posSlideOut + "px", "margin-right": -posSlideIn + "px" }, 700, () => {
-        $oldBox.css({ "margin-left": "", "margin-right": "", "display": "none" });
-        $newBox.css({ "margin-left": (posSlideIn) + "px", "margin-right": -posSlideIn + "px", "display": "flex", "align-items": "center", "flex-direction": "column" });
+        
+        $oldBox.css({ "margin-left": "", "margin-right": ""});
+        $newBox.css({ "margin-left": (posSlideIn) + "px", "margin-right": -posSlideIn + "px", "visibility": "unset", "display": "flex", "align-items": "center", "flex-direction": "column" });
         $newBox.animate({ "margin-left": "", "margin-right": "" }, 600);
+        console.log('currLoc',currLoc);
+        document.getElementById(currLoc).classList.add('hidden-page');
+        document.getElementById(Id).classList.remove('hidden-page');
+        currLoc = Id;
     });
-    currLoc = Id;
+    
 }
 
 $(() => {
-    $('.icon').hover(
-        () => {
-            $(this).find('img').css("display", "none");
-            $(this).find('p').css({ "display": "block", "position": "fixed" });
-        }, () => {
-            $(this).find('img').css({ "display": "block" });
-            $(this).find('p').css("display", "none");
-        }
-    );
+    // $('.icon').hover(
+    //     () => {
+    //         $(this).find('img').css("display", "none");
+    //         $(this).find('p').css({ "display": "block", "position": "fixed" });
+    //     }, () => {
+    //         $(this).find('img').css({ "display": "block" });
+    //         $(this).find('p').css("display", "none");
+    //     }
+    // );
 });
 
  forward = () => {
