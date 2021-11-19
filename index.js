@@ -1,4 +1,5 @@
 var currLoc = 'home';
+var filping = false;
  HideContent = (Id) => {
 
     var page = ['home', 'about', 'projects', 'contact'];
@@ -13,6 +14,8 @@ var currLoc = 'home';
     }
 }
  flip = (Id, back = true) => {
+    if(filping) return;
+    filping = true;
     var $oldBox = $("#" + currLoc);
     var $newBox = $("#" + Id);
     var $oldButton = $("#" + currLoc + "But");
@@ -43,6 +46,7 @@ var currLoc = 'home';
         document.getElementById(currLoc).classList.remove('not-hidden-page');
         document.getElementById(currLoc).classList.add('hidden-page');
         currLoc = Id;
+        filping = false;
     });
     
 }
