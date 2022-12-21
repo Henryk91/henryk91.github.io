@@ -156,7 +156,7 @@ loaderToggle =(val) => {
     }
     if (!block) {
         loaderToggle('show');
-        const domainUrl = 'https://henryk91-note.herokuapp.com/api/email';
+        const domainUrl = 'https://note.henryk.co.za/api/email';
         const message = name + '\n' + email + '\n' + msg
         const obj = { board: 't4', email, text: message, delete_password: '1234' };
         $(() => {
@@ -175,7 +175,7 @@ loaderToggle =(val) => {
 }
 
 logUse = () => {
-    const domainUrl = 'https://henryk91-note.herokuapp.com/api/log';
+    const domainUrl = 'https://note.henryk.co.za/api/log';
     $(() => {
         $.get(domainUrl,
         () => {console.log('Welcome to my site.')});
