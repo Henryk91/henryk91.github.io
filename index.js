@@ -1,5 +1,7 @@
 var currLoc = 'home';
 var filping = false;
+const isMobile = () => window.matchMedia('(max-width: 700px)').matches
+
  HideContent = (Id) => {
 
     var page = ['home', 'about', 'projects', 'contact'];
@@ -99,6 +101,7 @@ $(() => {
     flip(next);
 }
 document.onkeydown =  (event) => {
+    console.log('event',event);
     switch (event.keyCode) {
         case 37:
             backward();
@@ -109,14 +112,18 @@ document.onkeydown =  (event) => {
     }
 };
 $(() => {
-    $('body').on('swipeleft', () => {
-        forward();
-    });
+    if(isMobile()){
+        $('body').on('swipeleft', () => {
+            forward();
+        });
+    }
 });
 $(() => {
-    $('body').on('swiperight', () => {
-        backward();
-    });
+    if(isMobile()){
+        $('body').on('swiperight', () => {
+            backward();
+        });
+    }
 });
 
 loaderToggle =(val) => { 
