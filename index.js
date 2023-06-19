@@ -51,6 +51,14 @@ var filping = false;
     
 }
 
+directionalFlip = (Id) => {
+    if(filping) return;
+    var page = ['home', 'about', 'projects', 'contact'];
+    var currentIndex = page.findIndex(p => p === currLoc)
+    var nextIndex = page.findIndex(p => p === Id)
+    flip(Id, currentIndex > nextIndex)
+}
+
 $(() => {
     // $('.icon').hover(
     //     () => {
