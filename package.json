@@ -18,7 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy:github": "npm run build && node ./scripts/deploy-github"
+    "deploy:github": "npm run build && cp CNAME build/ && node ./scripts/deploy-github"
   },
   "browserslist": {
     "production": [
