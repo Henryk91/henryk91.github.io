@@ -9,7 +9,7 @@ export default function Home() {
       <div className="textArea">
         <p id="name">Hi, I'm Henry</p>
         <p>
-          I'm a web developer.<br />
+          I'm a full stack developer.<br />
           I build full-stack responsive websites and web/hybrid apps.
         </p>
       </div>
