@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, createContext } from "react";
 import "./style.css";
 import {
-  HashRouter,
+  BrowserRouter as Router,
   Routes,
   Route,
   useLocation,
@@ -179,13 +179,13 @@ export default function App() {
 
   return (
     <NavDirContext.Provider value={{ setDirection }}>
-      <HashRouter>
+      <Router>
         <Header />
         <Routes>
           {/* We render <Main /> for any route so it can handle all routes with animation */}
           <Route path="/*" element={<Main direction={direction} setDirection={setDirection} />} />
         </Routes>
-      </HashRouter>
+      </Router>
     </NavDirContext.Provider>
   );
 }
