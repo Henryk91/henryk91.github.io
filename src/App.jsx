@@ -20,19 +20,16 @@ const pageRoutes = ["/", "/about", "/projects", "/contact"];
 function AnimatedRoutes({ direction }) {
   const location = useLocation();
 
-  // These variants allow simultaneous slide out/in
   const variants = {
     initial: (dir) => ({
       x: dir === 1 ? "100vw" : "-100vw",
       position: "absolute",
       width: "100vw",
-      // height: "100%",
     }),
     animate: {
       x: 0,
       position: "relative",
       width: "100vw",
-      // height: "100%",
       "overflow-y": "scroll",
       transition: { duration: 0.4, ease: "easeInOut" }
     },
@@ -40,7 +37,6 @@ function AnimatedRoutes({ direction }) {
       x: dir === 1 ? "-100vw" : "100vw",
       position: "absolute",
       width: "100vw",
-      // height: "100%",
       transition: { duration: 0.4, ease: "easeInOut" }
     })
   };
@@ -57,7 +53,6 @@ function AnimatedRoutes({ direction }) {
   }
 
   return (
-    // <div style={{ position: "relative", height: "100%", width: "100vw", overflow: "hidden" }}>
     <div style={{ position: "relative", width: "100vw", overflow: "hidden" }}>
       <AnimatePresence custom={direction}>
         <motion.div
@@ -69,9 +64,6 @@ function AnimatedRoutes({ direction }) {
           exit="exit"
           style={{
             height: "100%",
-            // position: "absolute",
-            // width: "100vw",
-            // minHeight: "60vh"
           }}
         >
           {getPageComponent(location.pathname)}
@@ -84,24 +76,8 @@ function AnimatedRoutes({ direction }) {
 function Main({ direction, setDirection }) {
   const location = useLocation();
   const navigate = useNavigate();
-  const prevIdx = useRef(pageRoutes.indexOf(location.pathname));
   const touchStartX = useRef(null);
 
-  // Direction logic
-  useEffect(() => {
-  const idx = pageRoutes.indexOf(location.pathname);
-  const prev = prevIdx.current;
-  if (prev === 0 && idx === pageRoutes.length - 1) {
-    setDirection(-1); // Home ← Contact
-  } else if (prev === pageRoutes.length - 1 && idx === 0) {
-    setDirection(1); // Contact → Home
-  } else if (idx > prev) {
-    setDirection(1);
-  } else if (idx < prev) {
-    setDirection(-1);
-  }
-  prevIdx.current = idx;
-}, [location, setDirection]);
   // Keyboard
   useEffect(() => {
     function onKeyDown(e) {
@@ -141,7 +117,6 @@ function Main({ direction, setDirection }) {
   return (
     <div
       className="animated-page-container"
-      // style={{ position: "relative", minHeight: "70vh", width: "100vw", overflow: "hidden" }}
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
     >
@@ -182,7 +157,6 @@ export default function App() {
       <Router>
         <Header />
         <Routes>
-          {/* We render <Main /> for any route so it can handle all routes with animation */}
           <Route path="/*" element={<Main direction={direction} setDirection={setDirection} />} />
         </Routes>
       </Router>

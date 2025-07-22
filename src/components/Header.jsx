@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { NavDirContext } from "../App"; // adjust the import path as needed
+import { NavDirContext } from "../App";
 
 const icons = [
   { to: "/", label: "Home", icon: "whiteHouseIcon.png" },
@@ -18,7 +18,11 @@ export default function Header() {
     const pageRoutes = ["/", "/about", "/projects", "/contact"];
     const currIdx = pageRoutes.indexOf(location.pathname);
     const newIdx = pageRoutes.indexOf(to);
-    if (newIdx > currIdx || (newIdx === 0 && currIdx === pageRoutes.length - 1)) {
+    if (newIdx ===  0 && currIdx === 3) {
+      setDirection(-1);
+    }else if (newIdx ===  3 && currIdx === 0) {
+      setDirection(1);
+    } else if (newIdx > currIdx || (newIdx === 0 && currIdx === pageRoutes.length - 1)) {
       setDirection(1);
     } else if (newIdx < currIdx || (newIdx === pageRoutes.length - 1 && currIdx === 0)) {
       setDirection(-1);
