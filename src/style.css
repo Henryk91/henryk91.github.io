@@ -139,11 +139,12 @@ nav img{
 }
 .aboutCont{
     background-color: white;
-    text-align: center;
     margin-top: 1%;
     width: 80vw;
     box-shadow: 0.5px 2px 10px grey;
-    padding: 10px;
+    padding: 40px;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 .aboutCont h2{
     color: rgb(94, 164, 255);
@@ -163,9 +164,7 @@ nav img{
     color: rgb(94, 164, 255);
 }
 .aboutIntro{
-    text-align: center;
-    width: 60vw;
-    margin-left: 10vw; 
+    text-align: left;
     margin-top: 5px;
     margin-bottom: 5px;
 }
