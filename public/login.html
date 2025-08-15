@@ -121,8 +121,9 @@
     const qp = url.searchParams.get("redirect");
     if (qp) {
       try {
-        const target = new URL(qp, window.location.origin);
+        const target = qp.includes("https") ? new URL(qp): new URL(qp, window.location.origin)
         if (target.origin === window.location.origin) return target.pathname + target.search + target.hash;
+        return target
       } catch {}
     }
     if (document.referrer) {
