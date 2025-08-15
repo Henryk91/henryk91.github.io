@@ -116,20 +116,21 @@
   const register = url.searchParams.get("register");
   let isRegisterMode = !!register;
 
-  function getRedirectTarget() {
+  function getRedirectTarget(loginResponse) {
     const url = new URL(window.location.href);
     const qp = url.searchParams.get("redirect");
+    const params = `?userId=${loginResponse?.user?.id}`
     if (qp) {
       try {
         const target = qp.includes("https") ? new URL(qp): new URL(qp, window.location.origin)
-        if (target.origin === window.location.origin) return target.pathname + target.search + target.hash;
-        return target
+        if (target.origin === window.location.origin) return target.pathname + target.search + target.hash + params;
+        return target + params;
       } catch {}
     }
     if (document.referrer) {
       try {
         const ref = new URL(document.referrer);
-        if (ref.origin === window.location.origin) return ref.pathname + ref.search + ref.hash;
+        if (ref.origin === window.location.origin) return ref.pathname + ref.search + ref.hash + params;
       } catch {}
     }
     return "/";
@@ -150,7 +151,10 @@
         credentials: "include",
         body: JSON.stringify(payload)
       });
-      if (res.ok) return { ok: true };
+      if (res.ok) {
+        const data = await res.json();
+        return { ok: true, ...data };
+      }
       let msg = "Request failed.";
       try {
         const data = await res.json();
@@ -231,7 +235,7 @@
       const result = await sendAuth(REGISTER_ENDPOINT, { firstName, lastName, email, password, remember });
       setBusy(false, submitBtn);
       
-      if (result.ok && !MOCK_AUTH) window.location.replace(getRedirectTarget());
+      if (result.ok && !MOCK_AUTH) window.location.assign(getRedirectTarget(result));
       else errorEl.textContent = result.message;
     } else {
       if (!email || !password) {
@@ -241,7 +245,7 @@
       setBusy(true, submitBtn);
       const result = await sendAuth(LOGIN_ENDPOINT, { email, password, remember });
       setBusy(false, submitBtn);
-      if (result.ok && !MOCK_AUTH) window.location.replace(getRedirectTarget());
+      if (result.ok && !MOCK_AUTH) window.location.assign(getRedirectTarget(result));
       else errorEl.textContent = result.message;
     }
   });
