@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Love Trails Croatia - Gantt</title>
+  <title>Love Trails Croatia</title>
   <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
   <style>
     :root { --gap: 12px; --pad: 10px; --radius: 14px; --card:#0f172a; --ink:#e5e7eb; }
@@ -26,7 +26,7 @@
 <body>
   <div class="wrap">
   <div class="panel" id="" aria-label="">
-  <text class="gtitle" x="45" y="50" text-anchor="start" dy="0em" data-unformatted="Love Trails Croatia" data-math="N" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 22px; fill: rgb(229, 231, 235); opacity: 1; font-weight: normal; white-space: pre; text-align: center">Love Trails Croatia</text>
+  <text class="gtitle" x="45" y="50" text-anchor="start" dy="0em" data-unformatted="Love Trails Croatia" data-math="N" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 22px; fill: rgb(229, 231, 235); opacity: 1; font-weight: normal; white-space: pre; text-align: center">3Love Trails Croatia</text>
 </div>
     <div class="panel legend" id="legend-ui" aria-label="Category filters"></div>
     <div class="panel buttons" id="day-ui" aria-label="Day filters"></div>
@@ -47,16 +47,8 @@
     FIG.layout.yaxis.fixedrange = true;
     delete FIG.layout.updatemenus;
 
-    const config = {
-      scrollZoom: false,             // blocks pinch/scroll zoom
-      doubleClick: false,            // blocks double-tap zoom
-      displayModeBar: false,         // optional: hide toolbar
-      responsive: false,
-      displaylogo:false
-    };
-
     const PLOT = document.getElementById('plot');
-    Plotly.newPlot(PLOT, FIG.data, FIG.layout, config);
+    Plotly.newPlot(PLOT, FIG.data, FIG.layout, {responsive:false, displaylogo:false});
 
     // ---------- Legend pills (build UI) ----------
     (function(){
