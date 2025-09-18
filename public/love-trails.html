@@ -46,7 +46,7 @@
     delete FIG.layout.updatemenus;
 
     const PLOT = document.getElementById('plot');
-    Plotly.newPlot(PLOT, FIG.data, FIG.layout, {responsive:true, displaylogo:false});
+    Plotly.newPlot(PLOT, FIG.data, FIG.layout, {responsive:true, displaylogo:false, scrollZoom: false});
 
     // ---------- Legend pills (build UI) ----------
     (function(){
