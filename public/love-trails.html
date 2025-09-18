@@ -26,7 +26,7 @@
 <body>
   <div class="wrap">
   <div class="panel" id="" aria-label="">
-  <text class="gtitle" x="45" y="50" text-anchor="start" dy="0em" data-unformatted="Love Trails Croatia" data-math="N" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 22px; fill: rgb(229, 231, 235); opacity: 1; font-weight: normal; white-space: pre; text-align: center">2Love Trails Croatia</text>
+  <text class="gtitle" x="45" y="50" text-anchor="start" dy="0em" data-unformatted="Love Trails Croatia" data-math="N" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 22px; fill: rgb(229, 231, 235); opacity: 1; font-weight: normal; white-space: pre; text-align: center">Love Trails Croatia</text>
 </div>
     <div class="panel legend" id="legend-ui" aria-label="Category filters"></div>
     <div class="panel buttons" id="day-ui" aria-label="Day filters"></div>
@@ -43,10 +43,20 @@
     // Hide built-in legend and remove built-in updatemenus so they don't overlap our UI
     if (!FIG.layout) FIG.layout = {};
     FIG.layout.showlegend = false;
+    FIG.layout.xaxis.fixedrange = true;
+    FIG.layout.yaxis.fixedrange = true;
     delete FIG.layout.updatemenus;
 
+    const config = {
+      scrollZoom: false,             // blocks pinch/scroll zoom
+      doubleClick: false,            // blocks double-tap zoom
+      displayModeBar: false,         // optional: hide toolbar
+      responsive: false,
+      displaylogo:false
+    };
+
     const PLOT = document.getElementById('plot');
-    Plotly.newPlot(PLOT, FIG.data, FIG.layout, {responsive:true, displaylogo:false, scrollZoom: false});
+    Plotly.newPlot(PLOT, FIG.data, FIG.layout, config);
 
     // ---------- Legend pills (build UI) ----------
     (function(){
