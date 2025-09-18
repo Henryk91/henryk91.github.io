@@ -22,12 +22,11 @@
     #plot { width:100%; min-width: 900px;  min-height: 420px; }
     @media (max-width: 640px) { #plot {  min-height: 360px; } }
   </style>
-
 </head>
 <body>
   <div class="wrap">
   <div class="panel" id="" aria-label="">
-  <text class="gtitle" x="45" y="50" text-anchor="start" dy="0em" data-unformatted="Love Trails Croatia" data-math="N" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 22px; fill: rgb(229, 231, 235); opacity: 1; font-weight: normal; white-space: pre; text-align: center">5Love Trails Croatia</text>
+  <text class="gtitle" x="45" y="50" text-anchor="start" dy="0em" data-unformatted="Love Trails Croatia" data-math="N" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 22px; fill: rgb(229, 231, 235); opacity: 1; font-weight: normal; white-space: pre; text-align: center">Love Trails Croatia</text>
 </div>
     <div class="panel legend" id="legend-ui" aria-label="Category filters"></div>
     <div class="panel buttons" id="day-ui" aria-label="Day filters"></div>
@@ -44,27 +43,10 @@
     // Hide built-in legend and remove built-in updatemenus so they don't overlap our UI
     if (!FIG.layout) FIG.layout = {};
     FIG.layout.showlegend = false;
-    //FIG.layout.xaxis.fixedrange = true;
-    //FIG.layout.yaxis.fixedrange = true;
     delete FIG.layout.updatemenus;
 
-    const config = {
-      // scrollZoom: false,             // blocks pinch/scroll zoom
-      // doubleClick: true,            // blocks double-tap zoom
-      // displayModeBar: false,         // optional: hide toolbar
-      scrollZoom: true, 
-      responsive: false,
-      displaylogo:false
-    };
-
     const PLOT = document.getElementById('plot');
-    // Plotly.newPlot(PLOT, FIG.data, FIG.layout, { scrollZoom: true });
     Plotly.newPlot(PLOT, FIG.data, FIG.layout, {responsive:true, displaylogo:false});
-    //PLOT.on('plotly_click', (ev) => { /* clicks still fire */ });
-
-//    window.addEventListener('wheel', e => {
-//  console.log('prevented?', e.defaultPrevented, 'target:', e.target);
-// });
 
     // ---------- Legend pills (build UI) ----------
     (function(){
