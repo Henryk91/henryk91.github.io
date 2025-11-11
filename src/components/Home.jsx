@@ -16,7 +16,7 @@ export default function Home() {
       <div id="cta">
         <a
           href="/contact"
-          style={{ cursor: "pointer" }}
+          style={{ cursor: "pointer", color: 'rgb(255, 255, 255)' }}
           onClick={e => { e.preventDefault(); navigate("/contact"); }}
         >
           Need a website/webapp<br />or looking to hire
