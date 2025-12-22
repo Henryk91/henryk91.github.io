@@ -7,7 +7,10 @@
     {
       "id": "d3",
       "title": "Front-end: D3",
-      "tech": "Tech Used: HTML, CSS, JavaScript, D3.js",
+      "tech": {
+        "label": "Tech Used",
+        "items": ["HTML", "CSS", "JavaScript", "D3.js"]
+      },
       "description": "Dynamically rendered charts from third party api with hover-over details.",
       "links": [
         {
@@ -40,7 +43,10 @@
     {
       "id": "react",
       "title": "Front-end: ReactJS",
-      "tech": "Tech Used: HTML, CSS, JavaScript, React",
+      "tech": {
+        "label": "Tech Used",
+        "items": ["HTML", "CSS", "JavaScript", "React"]
+      },
       "links": [
         {
           "label": "Random Quote Machine",
@@ -72,7 +78,18 @@
     {
       "id": "node",
       "title": "Back-end: Node.js",
-      "tech": "Tech Used: Node.js, Mocha, Chai, MongoDB, MongooseJS, HelmetJS, Bcrypt",
+      "tech": {
+        "label": "Tech Used",
+        "items": [
+          "Node.js",
+          "Mocha",
+          "Chai",
+          "MongoDB",
+          "MongooseJS",
+          "HelmetJS",
+          "Bcrypt"
+        ]
+      },
       "note": "(Front-end for demo purposes. Not done by me)",
       "links": [
         {
@@ -127,10 +144,16 @@
           ]
         },
         {
-          "kind": "paragraphLines",
-          "lines": [
-            "Main Tech Used:",
-            "Html, Css, JavaScript, Node.js, Tomcat Server, PostgreSQL, and Heroku for hosting."
+          "kind": "tech",
+          "label": "Main Tech Used:",
+          "items": [
+            "Html",
+            "Css",
+            "JavaScript",
+            "Node.js",
+            "Tomcat Server",
+            "PostgreSQL",
+            "Heroku"
           ]
         },
         {
@@ -181,10 +204,16 @@
           "text": "This is a real time functioning chat app that can be used stand alone or as a base to build a private messaging app."
         },
         {
-          "kind": "paragraphLines",
-          "lines": [
-            "Main Tech Used:",
-            "Html, SCSS, Angular 6, TypeSctipt, JavaScript, Node.js, Socket.io"
+          "kind": "tech",
+          "label": "Main Tech Used:",
+          "items": [
+            "Html",
+            "SCSS",
+            "Angular 6",
+            "TypeScript",
+            "JavaScript",
+            "Node.js",
+            "Socket.io"
           ]
         },
         {
@@ -239,10 +268,14 @@
           ]
         },
         {
-          "kind": "paragraphLines",
-          "lines": [
-            "Main Tech Used:",
-            "Java, Pdfbox, Apache Poi, Google Drive API, Open CV"
+          "kind": "tech",
+          "label": "Main Tech Used:",
+          "items": [
+            "Java",
+            "Pdfbox",
+            "Apache Poi",
+            "Google Drive API",
+            "Open CV"
           ]
         }
       ]
@@ -275,10 +308,13 @@
           ]
         },
         {
-          "kind": "paragraphLines",
-          "lines": [
-            "Main Tech Used:",
-            "Java, Shell script, Sphinx4j, Mary text to speech"
+          "kind": "tech",
+          "label": "Main Tech Used:",
+          "items": [
+            "Java",
+            "Shell script",
+            "Sphinx4j",
+            "Mary text to speech"
           ]
         }
       ]

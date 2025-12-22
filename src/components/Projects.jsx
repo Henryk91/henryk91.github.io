@@ -1,12 +1,24 @@
 import React from "react";
 import projectsData from "../data/projects.json";
+import GitHubProjects from "./GitHubProjects";
 
 export default function Projects() {
   const renderFccProject = (project) => (
     <div key={project.id}>
       <div className="fccProjectHead">
         <h2>{project.title}</h2>
-        <p>{project.tech}</p>
+        {project.tech && (
+          <>
+            <p>{(project.tech.label || "Tech Used").trim()}:</p>
+            {Array.isArray(project.tech.items) && project.tech.items.length > 0 && (
+              <div className="github-project-meta justify-center">
+                {project.tech.items.map((tech) => (
+                  <span key={tech}>{tech}</span>
+                ))}
+              </div>
+            )}
+          </>
+        )}
         {project.description ? <p>{project.description}</p> : null}
         {project.note ? <p>{project.note}</p> : null}
       </div>
@@ -82,6 +94,19 @@ export default function Projects() {
             ))}
           </div>
         );
+      case "tech":
+        return (
+          <div key={index}>
+            <p>{section.label || "Main Tech Used:"}</p>
+            {Array.isArray(section.items) && section.items.length > 0 && (
+              <div className="github-project-meta">
+                {section.items.map((tech) => (
+                  <span key={tech}>{tech}</span>
+                ))}
+              </div>
+            )}
+          </div>
+        );
       default:
         return null;
     }
@@ -99,6 +124,7 @@ export default function Projects() {
       <div id="projectHeader">
         <h1>{projectsData.page.header}</h1>
       </div>
+      <GitHubProjects />
       <div className="projectCont" id="fccProjectBox">
         {projectsData.fccProjects.map(renderFccProject)}
       </div>

@@ -267,6 +267,88 @@ textarea:focus{
     color: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
+
+#githubProjects{
+    margin-top: 8px;
+}
+
+.github-projects-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.github-project-card{
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    padding: 12px 14px 14px;
+}
+
+.github-project-card h3{
+    margin: 0 0 6px 0;
+    color: rgb(94, 164, 255);
+    font-size: 18px;
+}
+
+.github-project-card p{
+    margin: 0 0 8px 0;
+}
+
+.github-project-meta{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 14px;
+    opacity: 0.85;
+    margin-bottom: 8px;
+}
+
+.github-project-meta span{
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    white-space: nowrap;
+}
+
+.github-project-links{
+    display: flex;
+    gap: 8px;
+}
+
+.github-project-links a{
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    font-size: 14px;
+    padding: 2px 12px;
+}
+
+.github-project-links a:hover{
+    color: rgb(94, 164, 255);
+    border-color: rgba(94, 164, 255, 0.7);
+    box-shadow: 0 0 4px 1px rgba(94, 164, 255, 0.5);
+}
+
+.github-projects-footer{
+    margin-top: 16px;
+    text-align: right;
+}
+
+.github-projects-view-all{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    font-size: 14px;
+    padding: 4px 14px;
+}
+
+.github-projects-view-all:hover{
+    color: rgb(94, 164, 255);
+    border-color: rgba(94, 164, 255, 0.7);
+    box-shadow: 0 0 4px 1px rgba(94, 164, 255, 0.5);
+}
 #rhinoPics{
     display: flex;
     flex-wrap: wrap;
@@ -488,4 +570,8 @@ textarea:focus{
   width: 100%;
   overflow: scroll;
   height: -webkit-fill-available;
+}
+
+.justify-center{
+    justify-content: center;
 }
