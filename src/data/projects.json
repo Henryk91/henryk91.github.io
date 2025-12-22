@@ -1,0 +1,287 @@
+{
+  "page": {
+    "id": "projects",
+    "header": "My Projects"
+  },
+  "fccProjects": [
+    {
+      "id": "d3",
+      "title": "Front-end: D3",
+      "tech": "Tech Used: HTML, CSS, JavaScript, D3.js",
+      "description": "Dynamically rendered charts from third party api with hover-over details.",
+      "links": [
+        {
+          "label": "United States GDP Bar Chart",
+          "code": "https://codepen.io/HenryK91/pen/MLGgJR",
+          "demo": "https://codepen.io/HenryK91/full/MLGgJR"
+        },
+        {
+          "label": "Pro Cycling Scatter Plot",
+          "code": "https://codepen.io/HenryK91/pen/GzGZyE",
+          "demo": "https://codepen.io/HenryK91/full/GzGZyE"
+        },
+        {
+          "label": "Global Temp 1753-2015 Heat Map",
+          "code": "https://codepen.io/HenryK91/pen/gqKKYM",
+          "demo": "https://codepen.io/HenryK91/full/gqKKYM"
+        },
+        {
+          "label": "US Educational Choropleth Map",
+          "code": "https://codepen.io/HenryK91/pen/Odoveo",
+          "demo": "https://codepen.io/HenryK91/full/Odoveo"
+        },
+        {
+          "label": "Movie, Kickstarter and Games Tree Map",
+          "code": "https://codepen.io/HenryK91/pen/LqJwGL",
+          "demo": "https://codepen.io/HenryK91/full/LqJwGL"
+        }
+      ]
+    },
+    {
+      "id": "react",
+      "title": "Front-end: ReactJS",
+      "tech": "Tech Used: HTML, CSS, JavaScript, React",
+      "links": [
+        {
+          "label": "Random Quote Machine",
+          "code": "https://codepen.io/HenryK91/pen/OdpLxv",
+          "demo": "https://codepen.io/HenryK91/full/OdpLxv"
+        },
+        {
+          "label": "Markdown Previewer",
+          "code": "https://codepen.io/HenryK91/pen/exveQW",
+          "demo": "https://codepen.io/Henryk91/full/exveQW"
+        },
+        {
+          "label": "Drum Machine",
+          "code": "https://codepen.io/HenryK91/pen/BMRZGe",
+          "demo": "https://codepen.io/Henryk91/full/BMRZGe"
+        },
+        {
+          "label": "JavaScript Calculator",
+          "code": "https://codepen.io/HenryK91/pen/KJvQqv",
+          "demo": "https://codepen.io/HenryK91/full/KJvQqv"
+        },
+        {
+          "label": "Pomodoro Clock",
+          "code": "https://codepen.io/HenryK91/pen/XOeovR",
+          "demo": "https://codepen.io/HenryK91/full/XOeovR"
+        }
+      ]
+    },
+    {
+      "id": "node",
+      "title": "Back-end: Node.js",
+      "tech": "Tech Used: Node.js, Mocha, Chai, MongoDB, MongooseJS, HelmetJS, Bcrypt",
+      "note": "(Front-end for demo purposes. Not done by me)",
+      "links": [
+        {
+          "label": "Metric-Imperial Converter",
+          "code": "https://glitch.com/edit/#!/henryk91-metric-imperial",
+          "demo": "https://henryk91-metric-imperial.glitch.me"
+        },
+        {
+          "label": "Issue Tracker",
+          "code": "https://glitch.com/edit/#!/henryk91-issue-track",
+          "demo": "https://henryk91-issue-track.glitch.me"
+        },
+        {
+          "label": "Personal Library",
+          "code": "https://glitch.com/edit/#!/henryk91-personal-library",
+          "demo": "https://henryk91-personal-library.glitch.me"
+        },
+        {
+          "label": "Stock Price Checker",
+          "code": "https://glitch.com/edit/#!/henryk91-stock-checker",
+          "demo": "https://henryk91-stock-checker.glitch.me"
+        },
+        {
+          "label": "Anonymous Message Board",
+          "code": "https://glitch.com/edit/#!/henryk91-anon-mes-board",
+          "demo": "https://henryk91-anon-mes-board.glitch.me"
+        }
+      ]
+    }
+  ],
+  "longProjects": [
+    {
+      "id": "rhino-assets",
+      "className": "projectCont black",
+      "title": "Rhino Assets Mobile App (Front and back-end fuel logging app)",
+      "sections": [
+        {
+          "kind": "paragraph",
+          "text": "The client requested a cross platform mobile app for fuel supply logging and management."
+        },
+        {
+          "kind": "heading",
+          "text": "Features Include:"
+        },
+        {
+          "kind": "list",
+          "items": [
+            "User Login",
+            "Asset add and remove",
+            "Usage Updating",
+            "Reporting On Usage"
+          ]
+        },
+        {
+          "kind": "paragraphLines",
+          "lines": [
+            "Main Tech Used:",
+            "Html, Css, JavaScript, Node.js, Tomcat Server, PostgreSQL, and Heroku for hosting."
+          ]
+        },
+        {
+          "kind": "images",
+          "wrapperId": "rhinoPics",
+          "images": [
+            {
+              "src": "/images/rhinoFP.png",
+              "alt": "rhinoFP"
+            },
+            {
+              "src": "/images/rhinoNU.png",
+              "alt": "rhinoNU"
+            },
+            {
+              "src": "/images/rhinoNTC.png",
+              "alt": "rhinoNTC"
+            },
+            {
+              "src": "/images/rhinoNTO.png",
+              "alt": "rhinoNTO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chatAppBox",
+      "className": "projectCont black",
+      "title": "Chat App",
+      "sections": [
+        {
+          "kind": "links",
+          "headerId": "chatAppHeader",
+          "links": [
+            {
+              "label": "Code",
+              "url": "https://github.com/Henryk91/ChatApp"
+            },
+            {
+              "label": "Demo",
+              "url": "https://henryk91.github.io/ChatAppClient/"
+            }
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "This is a real time functioning chat app that can be used stand alone or as a base to build a private messaging app."
+        },
+        {
+          "kind": "paragraphLines",
+          "lines": [
+            "Main Tech Used:",
+            "Html, SCSS, Angular 6, TypeSctipt, JavaScript, Node.js, Socket.io"
+          ]
+        },
+        {
+          "kind": "images",
+          "wrapperId": "rhinoPics",
+          "images": [
+            {
+              "src": "/images/chatAppMC.png",
+              "alt": "chatAppMC"
+            },
+            {
+              "src": "/images/chatAppM.png",
+              "alt": "chatAppM"
+            },
+            {
+              "src": "/images/chatAppC.png",
+              "alt": "chatAppC"
+            },
+            {
+              "src": "/images/chatAppCTS.png",
+              "alt": "chatAppCTS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecc",
+      "className": "projectCont black",
+      "title": "Electronic Cost Consulting (Intelligent Document Processing)",
+      "sections": [
+        {
+          "kind": "paragraph",
+          "text": "Ecc Has been one of my main projects over the last 2 years."
+        },
+        {
+          "kind": "paragraph",
+          "text": "The idea came from seeing how law firms calculate their bills. It takes somewhere between an hour to a couple of days to summarise the contents of a legal file, which can have upwards of a thousand pages. The idea was to automate the whole process."
+        },
+        {
+          "kind": "paragraph",
+          "text": "The project steps after receiving a scanned file are:"
+        },
+        {
+          "kind": "list",
+          "items": [
+            "OCR all the pages",
+            "Recognition start and end pages of all documents in files",
+            "Extracting data from documents depending on their type. Including, names, dates, word counts etc.",
+            "Recognising if documents contains certain rubber stamps to cut these out and rotate them for people to check.",
+            "After a quick summary check of unrecognisable pages by a person, convert all data into a bill ready to present to a client."
+          ]
+        },
+        {
+          "kind": "paragraphLines",
+          "lines": [
+            "Main Tech Used:",
+            "Java, Pdfbox, Apache Poi, Google Drive API, Open CV"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mia",
+      "className": "projectCont black",
+      "title": "Mia (Virtual Assistant) (Personal Project)",
+      "sections": [
+        {
+          "kind": "paragraph",
+          "text": "The idea came from the novelty of electronic assistants like Alexa/Bixby/Siri/Google Assistant etc. I always thought it was a great project but the one feature that was a bit of a challenge is the adding of new skills and tasks. The other is that most of them tend to only work with an internet connection and that most data is processed elsewhere."
+        },
+        {
+          "kind": "paragraph",
+          "text": "What I ended up building was a voice assistant working on a computer that can function without an internet connection."
+        },
+        {
+          "kind": "paragraph",
+          "text": "It has most of the features of a standard voice assistants but have added features such as:"
+        },
+        {
+          "kind": "list",
+          "items": [
+            "Quick adding of new skills.",
+            "Wake word disabling for working in quiet areas and changing of wake words.",
+            "Different language by asking.",
+            "An ability to show the web cam a picture and asking for translation or meaning.",
+            "Text communication via Facebook messenger."
+          ]
+        },
+        {
+          "kind": "paragraphLines",
+          "lines": [
+            "Main Tech Used:",
+            "Java, Shell script, Sphinx4j, Mary text to speech"
+          ]
+        }
+      ]
+    }
+  ]
+}

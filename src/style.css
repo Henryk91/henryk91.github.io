@@ -218,9 +218,9 @@ textarea:focus{
 
 #projects{
     display: flex;
-    align-content: center;
-    text-align: left;
+    align-content: flex-start;
     align-items: center;
+    text-align: left;
     flex-direction: column;
     font-size:16px;
     overflow-y: scroll;
@@ -232,35 +232,47 @@ textarea:focus{
 }
 #projectHeader > h1{
     background: rgb(37, 36, 36);
-    padding: 5px 15px 5px 15px;
+    padding: 10px 24px;
+    margin: 24px auto 20px auto;
+    display: inline-block;
 }
 .projectCont{
     display: flex;
     flex-direction: column;
-    padding-bottom: 10px;
-    line-height: 1.2em;
-    width: 80vw;
-}
-.projectCont p, ul{
-    padding-left: 10%;
-    margin-top: 5px; 
-    padding-right: 10%;
-
+    gap: 12px;
+    padding: 24px 5%;
+    margin-bottom: 24px;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 960px;
+    box-sizing: border-box;
 }
 .projectCont h2{
-    padding-left: 10%;
     color: rgb(94, 164, 255);
+    margin: 0;
+}
+.projectCont p{
+    margin: 0 0 8px 0;
+}
+.projectCont ul{
+    margin: 0 0 8px 1.25rem;
+    padding: 0;
 }
 .projectCont img{
-    width: 20%;
+    max-width: 20%;
+    height: auto;
 }
 .black{
     background: rgb(37, 36, 36);
-    width: 80vw;
     color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 #rhinoPics{
-    margin-left:15%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-left: 0;
 }
 #quickTD{
     width:70%;
@@ -344,14 +356,19 @@ textarea:focus{
 
 #fccProjectBox{
     display: flex;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2em;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
     flex-direction: row;
     line-height: 1.2em;
+    padding-bottom: 1.2em;
     color: white;
 }
 .fccProjectLinks{
-    padding-bottom: 10px;
+    text-align: center;
 }
 .fccProjectLinks > p{
     font-weight: bold;
@@ -375,16 +392,26 @@ textarea:focus{
     box-shadow: 0 0 4px 1px rgba(94, 164, 255, 0.5);
 }
 #fccProjectBox > div{
-    text-align: center;
-    background: rgb(37, 36, 36);;
-    width: 25vw;
-    margin: 7px;
-    padding: 7px;
+    text-align: left;
+    background: rgb(37, 36, 36);
+    flex: 1 1 260px;
+    max-width: 320px;
+    margin: 0;
+    padding: 16px 0px 14px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
 }
 .fccProjectHead{
-    height: 150px;
-    border-bottom: 1px solid white;
-    line-height: 1.2em;
+    padding: 12px 10px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    line-height: 1.3;
+    text-align: center;
+}
+
+@media(min-width: 1001px){
+    .fccProjectHead{
+        min-height: 160px;
+        display: block;
+    }
 }
 #chatAppHeader{
    text-align: center;
@@ -407,10 +434,7 @@ textarea:focus{
         flex-direction: column;
     }
     #fccProjectBox > div{
-        
-        width: 80vw;
-        margin-left: 0px;
-        padding: 0px;
+        max-width: 100%;
     }
     textarea{
         width: 60vw;
