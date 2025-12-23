@@ -14,7 +14,7 @@ export default function About() {
               </a>
             </div>
             <div id="cvDownload">
-              <a href="/Henry%20Koekemoer%20CV.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/Henry_Koekemoer_CV.pdf" target="_blank" rel="noopener noreferrer">
                 <img src="/icons/downloadCv.png" alt="cv-icon" />
                 <p>My CV</p>
               </a>
